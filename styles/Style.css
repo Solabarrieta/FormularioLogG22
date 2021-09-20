@@ -13,4 +13,12 @@ nav span             				{ margin: 0px 10px 0px 0px;
 						width: 100%;
 						display: inline-block;}
 
+/*form {
+	display: flex;
+}*/
+
+/*form div{
+	display: inherit;
+}*/
+
 #ErrorMsgs          		 { color: #f61; font-size: smaler}
