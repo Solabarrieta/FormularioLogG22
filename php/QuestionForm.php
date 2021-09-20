@@ -8,19 +8,19 @@
   <section class="main" id="s1">
     <div>
     <form action="">
-      <label for="correo"</label>
+      <label for="correo">Introduce un correo de UPV/EHU: </label>
       <input type ="text" id="correo" name="correo">  
       
-      <label for="enunciado"></label>
+      <label for="enunciado">Enunciado de la pregunta: </label>
       <input type="text" name="enunciado">
 
-      <label for="correcta"></label>
+      <label for="correcta">Respuesta correcta: </label>
       <input type="text" name="correcta">
-      <label for="incorrecta"></label>
+      <label for="incorrecta">Respuesta incorrecta: </label>
       <input type="text" name="incorrecta">
-      <label for="incorrecta1"></label>
+      <label for="incorrecta1">Respuesta incorrecta: </label>
       <input type="text" name="incorrecta1">
-      <label for="incorrecta2"></label>
+      <label for="incorrecta2">Respuesta incorrecta: </label>
       <input type="text" name="incorrecta2">
       
       <label for="complejidad">Complejidad</label>
@@ -33,9 +33,9 @@
       <label for="tema">Tema(Subject)*:</label>
       <input type="text" name="tema" id="tema">
 
-      <input type="file">
+      <input type="file" accept="Imagenes/*">
       
-      <input type="submit">
+      <button onclick="testEmail()">Crear pregunta</button>
     </form>
 
     </div>

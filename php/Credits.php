@@ -8,7 +8,7 @@
   <section class="main" id="s1">
     <div>
 
-      <h2>DATOS DEL AUTOR/AUTORES</h2>
+      <h2>Oier Solabarrieta Egues</h2>
 
     </div>
   </section>
