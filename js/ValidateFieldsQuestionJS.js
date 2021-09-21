@@ -52,12 +52,7 @@ function testEmail(){
 }
 
 
-
-
 function enviarCuestionario(){
     alert("Pregunta Creada correctamente!!");
 
 }
-
-
-
