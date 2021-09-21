@@ -1,26 +1,16 @@
 function previewImage(){
+    const inputFile = document.getElementById("inputFile");
+    const etImagen = document.getElementById("imagePreview");
     
-    let file = document.getElementById("inputFile").onchange = (parametro)=>{
-        if(file != ""){
-            debugger
-            let lector = new FileReader();
-            lector.readAsDataURL(parametro.target.files[0]);
-    
-            lector.onload = ()=>{
-                debugger
-                let preview = document.getElementById("imagen"),
-                image = document.createElement('img');
-    
-                image.src = lector.result;
-    
-                preview.innerHTML = '';
-                preview.append(image);
-            }
-        }else{
-            let text = document.getElementById("textFile");
-            text.innerText="No se puede previsualizar la imagen, no se ha subido ninguna..."
+    inputFile.onchange = () => {
+        const reader = new FileReader();
+        console.log(inputFile.files[0]);
+        reader.readAsDataURL(inputFile.files[0]);
+
+        reader.onload = () => {
+            etImagen.setAttribute("src", reader.result);
+            console.log(reader.result);
         }
-    };
-
-
+    
+    }
 }
