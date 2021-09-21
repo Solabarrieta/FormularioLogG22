@@ -2,6 +2,7 @@
 <html>
 <head>
   <?php include '../html/Head.html'?>
+  <script src="../js/ValidateFieldsQuestionJS.js"></script>
 </head>
 <body>
   <?php include '../php/Menus.php' ?>
@@ -63,8 +64,9 @@
 
       <div>
         <input accept="image/png,image/jpeg" type="file" id=inputFile>
-        <p id="textFile"></p>
       </div>
+
+      <button id="previewImg" onclick="previewImage()">Preview Image</button>
       
       <button id="boton" onclick="comprobarCamposVacios()">Crear pregunta</button>
     </form>
