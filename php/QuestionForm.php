@@ -10,7 +10,7 @@
     <form action="">
       <div>
       <label for="correo">Introduce un correo de UPV/EHU: </label>
-      <input type ="text" id="correo" name="correo">  
+      <input type ="text" id="email" name="correo">  
       <p id="textEmail"></p>
       </div>
       
