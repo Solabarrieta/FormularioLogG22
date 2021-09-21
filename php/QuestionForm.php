@@ -15,27 +15,27 @@
       
       <div>
       <label for="enunciado">Enunciado de la pregunta: </label>
-      <input type="text" name="enunciado">
+      <input type="text" name="enunciado" id="enunciado">
       </div>
 
       <div>
       <label for="correcta">Respuesta correcta: </label>
-      <input type="text" name="correcta">
+      <input type="text" name="correcta" id="correcta">
       </div>
 
       <div>
       <label for="incorrecta">Respuesta incorrecta: </label>
-      <input type="text" name="incorrecta">
+      <input type="text" name="incorrecta" id="incorrecta">
       </div>
       
       <div>
       <label for="incorrecta1">Respuesta incorrecta: </label>
-      <input type="text" name="incorrecta1">
+      <input type="text" name="incorrecta1" id="incorrecta1">
       </div>
       
       <div>
       <label for="incorrecta2">Respuesta incorrecta: </label>
-      <input type="text" name="incorrecta2">
+      <input type="text" name="incorrecta2"id="incorrecta2">
       </div>
 
       <div>
@@ -54,10 +54,10 @@
 
 
       <div>
-        <input accept="image/png,image/jpeg" type="file">
+        <input accept="image/png,image/jpeg" type="file" id=inputFile>
       </div>
       
-      <button class="boton" onclick="testEmail()">Crear pregunta</button>
+      <button id="boton" onclick="testEmail()">Crear pregunta</button>
     </form>
 
     </div>
