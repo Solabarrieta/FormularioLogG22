@@ -66,7 +66,7 @@
         <input accept="image/png,image/jpeg" type="file" id=inputFile>
       </div>
 
-      <button id="boton" onclick="comprobarCamposVacios()">Crear pregunta</button>
+      <button type="button" id="boton" onclick="comprobarCamposVacios()">Crear pregunta</button>
     </form>
 
     </div>
