@@ -2,7 +2,6 @@
 <html>
 <head>
   <?php include '../html/Head.html'?>
-  <script src="../js/ValidateFieldsQuestionJS.js"></script>
 </head>
 <body>
   <?php include '../php/Menus.php' ?>
@@ -17,7 +16,7 @@
       
       <div>
       <label for="enunciado">Enunciado de la pregunta: </label>
-      <input type="text" name="enunciado" id="enunciado" required>
+      <input type="text" name="enunciado" id="enunciado" minlength="10" required>
       </div>
 
       <div>
@@ -59,9 +58,7 @@
         <input accept="image/png,image/jpeg" type="file" id=inputFile>
       </div>
 
-      <button id="previewImg" onclick="previewImage()">Preview Image</button>
-      
-      <button id="boton" onclick="enviarCuestionario()">Crear pregunta</button>
+      <button id="boton">Crear pregunta</button>
     </form>
 
     </div>
