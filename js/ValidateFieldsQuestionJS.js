@@ -1,5 +1,4 @@
 function comprobarCamposVacios(){
-
     let email = document.getElementById("email").value;
     let enunciado = document.getElementById("enunciado").value;
     let resCorrecta = document.getElementById("correcta").value;
@@ -11,7 +10,6 @@ function comprobarCamposVacios(){
 
 
     let requires = [{variable: email, parrafo: "textCorreo"},
-                    {variable: enunciado, parrafo: "textEnunciado"},
                     {variable: resCorrecta, parrafo: "textCorrecta"},
                     {variable: resIncorrecta, parrafo: "textIncorrecta"},
                     {variable: resIncorrecta1, parrafo: "textIncorrecta1"},
@@ -20,15 +18,21 @@ function comprobarCamposVacios(){
                     {variable: tema, parrafo: "textTema"}]
     
     let camposVacios=0; 
+
+    let result = document.getElementById("textEnunciado");
+    if(enunciado.value===""){
+        result.innerText = 'Este campo es obligatorio';
+    }else if(enunciado.length<10){
+        result.innerText = `Este campo tiene que tener como minimo 10 caracteres, solo has puesto ${enunciado.length}`;
+    }
+
     requires.forEach((entrada)=>{
         if(entrada.variable === ""){
-            debugger
             let result = document.getElementById(entrada.parrafo);
-            result.innerText = 'Este campo es obligatorio'
+            result.innerText = 'Este campo es obligatorio';
             camposVacios++;
         }
     });
-
     if(camposVacios===0){
         testEmail();
     }
