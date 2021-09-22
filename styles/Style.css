@@ -22,7 +22,7 @@ input + p{
 
 
 .input-container{
-	margin: 15px;
+	margin: 10px;
 }
 
 .image-container{
@@ -34,5 +34,7 @@ input + p{
 }
 
 .image-container__image{
-	width: 100%;
+	max-width: 200px;
+	max-height: 120px;
+
 }

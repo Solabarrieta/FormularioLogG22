@@ -8,7 +8,7 @@
   <?php include '../php/Menus.php' ?>
   <section class="main" id="s1">
     <div>
-    <form action="">
+    <form action="" id="formulario">
       <div class="input-container">
       <label for="correo">Introduce un correo de UPV/EHU: </label>
       <input type ="text" id="email" name="correo">  

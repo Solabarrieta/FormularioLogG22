@@ -1,29 +1,24 @@
-    /*
-    const etImagen = document.getElementById("imagePreview");
-    
-    inputFile.onchange = () => {
-        const reader = new FileReader();
-        console.log(inputFile.files[0]);
-        reader.readAsDataURL(inputFile.files[0]);
+let n = 0;
 
-        reader.onload = () => {
-            etImagen.setAttribute("src", reader.result);
-            console.log(reader.result);
-        }
-    
-    }*/
-    function previewImage(){
+function previewImage(){
+
+    if(n===0){
+
         const inptFile = document.getElementById("inputFile");
-        const figura = document.createElement("figure");
-        const etDiv = document.getElementById("div-image");
+        const section = document.getElementById("s1");
         const imagen = document.createElement("img");
+        const text = document.createElement("p");
+        const salto = document.createElement("br");
 
-        figura.classList.add('image-container');
-
-        etDiv.appendChild(figura);
 
         imagen.classList.add("image-container__image");
-        figura.appendChild(imagen);
+        text.innerText = 'Imagenes seleccionadas : ';
+        section.appendChild(text);
+        section.appendChild(salto);
+
+        
+        section.appendChild(imagen);
+
         inptFile.onchange = ()=>{
             const reader = new FileReader();
             reader.readAsDataURL(inptFile.files[0]);
@@ -32,5 +27,6 @@
                 imagen.setAttribute("src", reader.result);
             }
         } 
-
+        n++;
     }
+}
