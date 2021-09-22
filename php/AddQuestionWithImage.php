@@ -2,49 +2,50 @@
 <html>
 <head>
   <?php include '../html/Head.html'?>
+  <script src='../js/ShowImageInForm.js'></script>
 </head>
 <body>
   <?php include '../php/Menus.php' ?>
   <section class="main" id="s1">
     <div>
     <form action="">
-      <div>
+      <div class="input-container">
       <label for="correo">Introduce un correo de UPV/EHU: </label>
       <input type ="text" id="email" name="correo">  
       <p id="textEmail"></p>
       </div>
       
-      <div>
+      <div class="input-container">
       <label for="enunciado">Enunciado de la pregunta: </label>
       <input type="text" name="enunciado" id="enunciado">
       <p id="textEnunciado"></p>
       </div>
 
-      <div>
+      <div class="input-container">
       <label for="correcta">Respuesta correcta: </label>
       <input type="text" name="correcta" id="correcta">
       <p id="textCorrecta"></p>
       </div>
 
-      <div>
+      <div class="input-container">
       <label for="incorrecta">Respuesta incorrecta: </label>
       <input type="text" name="incorrecta" id="incorrecta">
       <p id="textIncorrecta"></p>
       </div>
       
-      <div>
+      <div class="input-container">
       <label for="incorrecta1">Respuesta incorrecta: </label>
       <input type="text" name="incorrecta1" id="incorrecta1">
       <p id="textIncorrecta1"></p>
       </div>
       
-      <div>
+      <div class="input-container">
       <label for="incorrecta2">Respuesta incorrecta: </label>
       <input type="text" name="incorrecta2"id="incorrecta2">
       <p id="textIncorrecta2"></p>
       </div>
 
-      <div>
+      <div class="input-container">
       <label for="complejidad">Complejidad</label>
       <select name="complejidad" id="complejidad">
         <option value="1">Baja</option>
@@ -54,25 +55,24 @@
       <p id="textComplejidad"></p>
       </div>
       
-      <div>
+      <div class="input-container">
       <label for="tema">Tema(Subject)*:</label>
       <input type="text" name="tema" id="tema">
       <p id="textTema"></p>
       </div>
 
 
-      <div>
-        <input accept="image/png,image/jpeg" type="file" id=inputFile>
+      <div class="input-container">
+        <input accept="image/png,image/jpeg" type="file" id="inputFile" onclick="previewImage()">
         <p id="textFile"></p>
-        <div id="imagen">
-        </div>
-      </div>
+        <figure class="image-container">
+          <img src="" alt="" id="imagePreview" class="image-container__image">
+        </figure>
 
-      <button id="previewImg" onclick="previewImage()">Preview Image</button>
+      </div>
       
       <button id="boton" onclick="comprobarCamposVacios()">Crear pregunta</button>
     </form>
-
     </div>
   </section>
   <?php include '../html/Footer.html' ?>
