@@ -62,12 +62,9 @@
       </div>
 
 
-      <div class="input-container">
+      <div class="input-container" id="div-image">
         <input accept="image/png,image/jpeg" type="file" id="inputFile" onclick="previewImage()">
         <p id="textFile"></p>
-        <figure class="image-container">
-          <img src="" alt="" id="imagePreview" class="image-container__image">
-        </figure>
 
       </div>
       
