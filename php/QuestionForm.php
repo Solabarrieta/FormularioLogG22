@@ -66,8 +66,6 @@
         <input accept="image/png,image/jpeg" type="file" id=inputFile>
       </div>
 
-      <button id="previewImg" onclick="previewImage()">Preview Image</button>
-      
       <button id="boton" onclick="comprobarCamposVacios()">Crear pregunta</button>
     </form>
 
