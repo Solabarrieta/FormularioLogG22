@@ -33,8 +33,8 @@ function comprobarCamposVacios(){
             camposVacios++;
         }
     });
-    if(camposVacios===0){
-        testEmail();
+    if(camposVacios===0 && testEmail()){
+        enviarCuestionario();
     }
 }
 
@@ -48,10 +48,11 @@ function testEmail(){
     let email = document.getElementById("email").value;
     
     if(regIkasle.test(email)||regIrakasle.test(email)){
-        enviarCuestionario()
+        return true;
     }else{
         let result = document.getElementById("textEmail");
-        result.innerText = `El correo ${email} no es valido, por favor introduce uno nuevo`
+        result.innerText = `El correo ${email} no es valido, por favor introduce uno nuevo`;
+        return false;
     }
 }
 
