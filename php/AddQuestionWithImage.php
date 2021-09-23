@@ -2,6 +2,7 @@
 <html>
 <head>
   <?php include '../html/Head.html'?>
+  <script src='../js/ValidateFieldsQuestionJS.js'></script>
   <script src='../js/ShowImageInForm.js'></script>
 </head>
 <body>
@@ -68,7 +69,7 @@
 
       </div>
       
-      <button id="boton" onclick="comprobarCamposVacios()">Crear pregunta</button>
+      <button type='button' id="boton" onclick="comprobarCamposVacios()">Crear pregunta</button>
     </form>
     </div>
   </section>
