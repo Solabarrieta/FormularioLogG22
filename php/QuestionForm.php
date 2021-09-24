@@ -2,6 +2,10 @@
 <html>
 <head>
   <?php include '../html/Head.html'?>
+  <!--
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="../js/ValidateFieldsQuestionJQ.js"></script> 
+  -->
   <script src="../js/ValidateFieldsQuestionJS.js"></script>
 </head>
 <body>
