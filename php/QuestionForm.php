@@ -12,8 +12,8 @@
   <?php include '../php/Menus.php' ?>
   <section class="main" id="s1">
     <div>
-    <form action="">
-      <div>
+    <form action="AddQuestion.php">
+    <div>
       <label for="correo">Introduce un correo de UPV/EHU: </label>
       <input type ="text" id="email" name="correo">  
       <p id="textEmail"></p>
@@ -70,7 +70,11 @@
         <input accept="image/png,image/jpeg" type="file" id=inputFile>
       </div>
 
-      <button type="button" id="boton" onclick="comprobarCamposVacios()">Crear pregunta</button>
+      <div>
+        
+        <input type="submit" onclick="comprobarCamposVacios()">
+      </div>
+
     </form>
 
     </div>

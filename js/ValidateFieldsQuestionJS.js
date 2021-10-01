@@ -19,22 +19,30 @@ function comprobarCamposVacios(){
     
     let camposVacios=0; 
 
-    let result = document.getElementById("textEnunciado");
-    if(enunciado.value===""){
-        result.innerText = 'Este campo es obligatorio';
-    }else if(enunciado.length<10){
-        result.innerText = `Este campo tiene que tener como minimo 10 caracteres, solo has puesto ${enunciado.length}`;
-    }
 
     requires.forEach((entrada)=>{
         if(entrada.variable === ""){
             let result = document.getElementById(entrada.parrafo);
-            result.innerText = 'Este campo es obligatorio';
             camposVacios++;
         }
     });
-    if(camposVacios===0 && testEmail()){
-        enviarCuestionario();
+
+    if(testEmail(email)){
+        if(camposVacios===0){
+            let result = document.getElementById("textEnunciado");
+            if(enunciado.value===""){
+                alert('Este campo es obligatorio');
+            }else if(enunciado.length<10){
+                alert(`Este campo tiene que tener como minimo 10 caracteres, solo has puesto ${enunciado.length}`);
+            }else{
+                enviarCuestionario();
+            }
+        }else{
+            alert('Hay campos sin rellenar');
+        }
+    
+    }else{
+        alert('El correo que has introducido no es correcto!');
     }
 }
 
@@ -51,7 +59,7 @@ function testEmail(){
         return true;
     }else{
         let result = document.getElementById("textEmail");
-        result.innerText = `El correo ${email} no es valido, por favor introduce uno nuevo`;
+        alert(`El correo ${email} no es valido, por favor introduce uno nuevo`);
         return false;
     }
 }
