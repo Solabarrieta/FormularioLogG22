@@ -39,6 +39,7 @@ echo
 if(mysqli_num_rows($result)>0){
   while($row=mysqli_fetch_assoc($result)){
        echo "
+       <tbody styles='overflow: scroll'>
         <tr>
           <td>".$row['email']."</td>
           <td>".$row['enunciado']."</td>
@@ -49,9 +50,10 @@ if(mysqli_num_rows($result)>0){
           <td>".$row['complejidad']."</td>
           <td>".$row['tema']."</td>
         </tr>
-    ";
+        </tbody>";
 
-    echo '<\table>';
+        echo "<\table>";
+
 
   }
 }else{

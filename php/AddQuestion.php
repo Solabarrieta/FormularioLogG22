@@ -10,27 +10,45 @@
     <div>
       <form>
       <?php
-        $link = mysqli_connect($serve,$user, $pass, $basededatos);
-        $correo = $_POST[correo];
-        $enunciado = $_POST[enunciado];
-        $rcorrecta = $_POST[correcta];
-        $rincorrecta1 = $_POST[incorrecta];
-        $rincorrecta2 = $_POST[incorrecta1];
-        $rincorrecta3 = $_POST[incorrecta2];
-        $complejidad = $_POST[complejidad];
-        $tema = $_POST[tema];
+                 $parametro= array("email","enunciado","respuestaCorrecta","respuestaIncorrecta1","respuestaIncorrecta2","respuestaIncorrecta3","complejidad","tema");
+                 $i=0;
+                 $conn = new mysqli($server, $user, $pass, $basededatos);
+                 if(mysqli_connect_errno()){
+                  printf("Error de conexión: %s\n", mysqli_connect_error());
+                  exit();
+                 }
+                  /*
+                  $result=$conn->query("SELECT * from preguntas where email like '".$_POST["correo"]."'");
+                  if(!$result){
+                    echo "no se ha podido escoger el email";
+                    exit();
+                  }
 
-        $sql ="INSERT INTO preguntas (email,enunciado,respuestaCorrecta,respuestaIncorrecta1,respuestaIncorrecta2,respuestaIncorrecta3,complejidad,tema) VALUES ('$_POST[email]','$_POST[enunciado]', '$_POST[respuestaCorrecta]')";
+                  echo $result["email"];
+                  if($result["email"]==$_POST["correo"]){
+                    echo "este correo ya ha registrado una pregunta";
+                    exit();
+                  }
+                */
+                  
+                  
+                  
 
-        if(!mysqli_query($link,$sql)){
-          die('Error: '.mysqli_error($link));
-        }else{
-          echo '
-            Pregunta añadida
-          ';
-          echo "<p><a href= './ShowQuestions.php'> Ver preguntas</a></p>";
-        }
-      ?>
+                  $stmt = $conn->prepare("INSERT INTO preguntas (email, enunciado,respuestaCorrecta, respuestaIncorrecta1, respuestaIncorrecta2, respuestaIncorrecta3, complejidad, tema) VALUES ('".$_POST["correo"]."','".$_POST["enunciado"]."','".$_POST["correcta"]."','".$_POST["incorrecta"]."','".$_POST["incorrecta1"]."','".$_POST["incorrecta2"]."','".$_POST["complejidad"]."','".$_POST["tema"]."')");
+
+                  
+
+                  if($stmt){
+                    if($stmt->execute()){
+                      echo "se ha enviado la pregunta correctamente";
+                      echo "<p><a href='./ShowQuestions.php'>Ver preguntas</a></p>";
+                      $stmt->close();
+                    } 
+                  }else{
+                    echo 'no se ha podido enviar la pregunta a la base de datos';
+                  }
+                  
+            ?>
 
     </form>
 

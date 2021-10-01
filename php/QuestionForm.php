@@ -12,7 +12,7 @@
   <?php include '../php/Menus.php' ?>
   <section class="main" id="s1">
     <div>
-    <form action="AddQuestion.php">
+    <form action="AddQuestion.php" onsubmit= "return comprobarCamposVacios()">
     <div><label for="correo">Introduce un correo de UPV/EHU: </label>
       <input type ="text" id="email" name="correo">  
       <p id="textEmail"></p>
@@ -71,7 +71,7 @@
 
       <div>
         
-        <input type="submit" onclick="comprobarCamposVacios()">
+        <input type="submit">
       </div>
 
     </form>
