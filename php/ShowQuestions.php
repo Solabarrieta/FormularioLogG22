@@ -21,21 +21,24 @@ if(!$conn){
 $sql="SELECT * FROM preguntas";
 $result =mysqli_query($conn, $sql);
 
+echo
+"
+  <table class=\"tabla\" border=\"1\" style\"width: 100% \">
+    <tr>
+      <th>Correo</th>
+      <th>Enunciado</th>
+      <th>Respuesa Correcta</th>
+      <th>Respuesta Incorrecta 1</th>
+      <th>Respuesta Incorrecta 2</th>
+      <th>Respuesta Incorrecta 3</th>
+      <th>Complejidad</th>
+      <th>Tema</th>
+  </tr>
+
+  ";
 if(mysqli_num_rows($result)>0){
   while($row=mysqli_fetch_assoc($result)){
-    echo
-    "
-      <table class=\"tabla\">
-        <tr>
-          <th>Correo</th>
-          <th>Enunciado</th>
-          <th>Respuesa Correcta</th>
-          <th>Respuesta Incorrecta 1</th>
-          <th>Respuesta Incorrecta 2</th>
-          <th>Respuesta Incorrecta 3</th>
-          <th>Complejidad</th>
-          <th>Tema</th>
-        </tr>
+       echo "
         <tr>
           <td>".$row['email']."</td>
           <td>".$row['enunciado']."</td>
@@ -46,9 +49,9 @@ if(mysqli_num_rows($result)>0){
           <td>".$row['complejidad']."</td>
           <td>".$row['tema']."</td>
         </tr>
-
-      </table>
     ";
+
+    echo '<\table>';
 
   }
 }else{
