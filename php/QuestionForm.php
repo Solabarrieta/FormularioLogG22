@@ -13,8 +13,7 @@
   <section class="main" id="s1">
     <div>
     <form action="AddQuestion.php">
-    <div>
-      <label for="correo">Introduce un correo de UPV/EHU: </label>
+    <div><label for="correo">Introduce un correo de UPV/EHU: </label>
       <input type ="text" id="email" name="correo">  
       <p id="textEmail"></p>
       </div>
