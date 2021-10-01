@@ -32,13 +32,16 @@ function comprobarCamposVacios(){
             let result = document.getElementById("textEnunciado");
             if(enunciado.value===""){
                 alert('Este campo es obligatorio');
+                return false;
             }else if(enunciado.length<10){
                 alert(`Este campo tiene que tener como minimo 10 caracteres, solo has puesto ${enunciado.length}`);
+                return false;
             }else{
-                enviarCuestionario();
+                return true;
             }
         }else{
             alert('Hay campos sin rellenar');
+            return false;
         }
     
     }else{
