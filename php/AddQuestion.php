@@ -41,8 +41,8 @@
                   if($stmt){
                     if($stmt->execute()){
                       echo "se ha enviado la pregunta correctamente";
-                      echo "<p><a href='./ShowQuestions.php'>Ver preguntas</a></p>";
                       $stmt->close();
+                      echo "<p><a href='./ShowQuestions.php'>Ver preguntas</a></p>";
                     } 
                   }else{
                     echo 'no se ha podido enviar la pregunta a la base de datos';
