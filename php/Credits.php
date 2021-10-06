@@ -9,6 +9,7 @@
     <div>
 
       <h2>Oier Solabarrieta Egues</h2>
+      <h2>Fredy Samuel Guzman Ajala</h2>
 
     </div>
   </section>
