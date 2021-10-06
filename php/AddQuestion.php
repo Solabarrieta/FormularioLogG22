@@ -17,21 +17,6 @@
                   printf("Error de conexión: %s\n", mysqli_connect_error());
                   exit();
                  }
-                  /*
-                  $result=$conn->query("SELECT * from preguntas where email like '".$_POST["correo"]."'");
-                  if(!$result){
-                    echo "no se ha podido escoger el email";
-                    exit();
-                  }
-
-                  echo $result["email"];
-                  if($result["email"]==$_POST["correo"]){
-                    echo "este correo ya ha registrado una pregunta";
-                    exit();
-                  }
-                */
-                  
-                  
                   
 
                   $stmt = $conn->prepare("INSERT INTO preguntas (email, enunciado,respuestaCorrecta, respuestaIncorrecta1, respuestaIncorrecta2, respuestaIncorrecta3, complejidad, tema) VALUES ('".$_POST["correo"]."','".$_POST["enunciado"]."','".$_POST["correcta"]."','".$_POST["incorrecta"]."','".$_POST["incorrecta1"]."','".$_POST["incorrecta2"]."','".$_POST["complejidad"]."','".$_POST["tema"]."')");

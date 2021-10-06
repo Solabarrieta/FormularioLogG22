@@ -1,17 +1,4 @@
-<?php
-$email_a = 'joe@example.com';
-$email_b = 'bogus';
 
-if (filter_var($email_a, FILTER_VALIDATE_EMAIL)) {
-    echo "Esta dirección de correo ($email_a) es válida.";
-}
-if (filter_var($email_b, FILTER_VALIDATE_EMAIL)) {
-    echo "Esta dirección de correo ($email_b) es válida.";
-}
-function validarEmail($email){
-}
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +8,6 @@ function validarEmail($email){
     <title>Document</title>
 </head>
 <body>
-    <h1>hola</h1>
+    <h1>esto es una prueba</h1>
 </body>
 </html>
