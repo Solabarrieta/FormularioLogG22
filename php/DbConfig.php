@@ -1,5 +1,5 @@
 <?php
-$local=1; //0 para la nube
+$local=0; //0 para la nube
 if ($local==1){
     $server="127.0.0.1";
     $user="oier";
@@ -8,8 +8,8 @@ if ($local==1){
 }
 else{
     $server="localhost";
-    $user="";
-    $pass="";
-    $basededatos="";
+    $user="G22";
+    $pass="TWTnlYm33HtAL";
+    $basededatos="db_G22";
 }
 ?>
