@@ -17,12 +17,8 @@
                   printf("Error de conexión: %s\n", mysqli_connect_error());
                   exit();
                  }
-                  
-
                   $stmt = $conn->prepare("INSERT INTO preguntas (email, enunciado,respuestaCorrecta, respuestaIncorrecta1, respuestaIncorrecta2, respuestaIncorrecta3, complejidad, tema) VALUES ('".$_POST["correo"]."','".$_POST["enunciado"]."','".$_POST["correcta"]."','".$_POST["incorrecta"]."','".$_POST["incorrecta1"]."','".$_POST["incorrecta2"]."','".$_POST["complejidad"]."','".$_POST["tema"]."')");
-
                   
-
                   if($stmt){
                     if($stmt->execute()){
                       echo "se ha enviado la pregunta correctamente";

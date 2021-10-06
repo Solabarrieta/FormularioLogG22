@@ -1,13 +1,30 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!--<?php include '../html/Head.html' ?>-->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
+    <script src="../js/ConfirmPasswordJQ.js"></script>
+
 </head>
+
 <body>
-    <h1>esto es una prueba</h1>
-</body>
-</html>
+    <!--<?php include '../php/Menus.php' ?> -->
+    <section class="main" id="s1">
+        <form action=funciones/ComprobarSingup.php method="POST">
+            <h2>Identificación de usuario </h2>
+            <p> Email : <input type="email" required name="email" size="21" value="" />
+
+                <label>password :
+                    <input name="password" required id="password" type="password" />
+                </label>
+                <br>
+                <label>confirm password:
+                    <input type="password" name="confirm_password" required id="confirm_password" />
+                    <span id='message'></span>
+                </label>
+            <p> <input id="input_2" type="submit" />
+        </form>
+    </section>
+    <?php include '../html/Footer.html' ?>
