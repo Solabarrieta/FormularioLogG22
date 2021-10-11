@@ -8,6 +8,12 @@ $pasw = $_POST['password'];
 $pasw2 = $_POST['confirm_password'];
 $tipo = $_POST['type'];
 
+if($pasw!=$pasw2){
+    echo ("The passwords aren't the same");
+    header("Location: ../singUp.php");
+}
+
+
 
 $usuarios = mysqli_query($mysql, "select * from Users where user_email ='$username'");
 $cont = mysqli_num_rows($usuarios);
@@ -20,4 +26,4 @@ $Singup = mysqli_query($mysql, "INSERT INTO Users (user_email,user_password,tipo
 
 mysqli_close($mysql); //cierra la conexion
 
-header("Location: ../Layout.php?username=$username");
+header("Location: ../Layout.php?user=$username");
