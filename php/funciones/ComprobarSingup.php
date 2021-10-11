@@ -8,6 +8,11 @@ $pasw = $_POST['password'];
 $pasw2 = $_POST['confirm_password'];
 $tipo = $_POST['type'];
 
+//$validateuser=test_input($_POST['email']);
+$pattern= "/^[a-z][a-z]+[0-9]{3}[@]ikasle\.ehu\.(eus|es)$/";
+$patternprof='/^([a-z]+\.[a-z]+[@]ehu\.(eus|es)|[a-z]+[@]ehu\.(eus|es))$/';
+
+
 if($pasw!=$pasw2){
     echo ("The passwords aren't the same");
     header("Location: ../singUp.php");
@@ -20,6 +25,20 @@ $cont = mysqli_num_rows($usuarios);
 if ($cont > 0) {
     echo "ya existe este usuario en la base de datos.";
     exit();
+}
+if($tipo=='profesor'){
+    if(!preg_match("/^([a-z]+\.[a-z]+[@]ehu\.(eus|es)|[a-z]+[@]ehu\.(eus|es))$/",$username)){
+        echo "el email del profesor no es valido";
+        die('');
+    }
+    
+}else{
+    if(!preg_match($pattern,$username)){
+        echo "el email del estudiante no es valido";
+        die();
+    }
+    echo "el email de estudiante es valido";
+
 }
 $Singup = mysqli_query($mysql, "INSERT INTO Users (user_email,user_password,tipo) VALUE ('$username','$pasw','$tipo')");
 
