@@ -1,10 +1,12 @@
 <?php
+
+ require '../DbConfig.php';
+
 if (isset($_POST['email'])) {
-    $mysql = mysqli_connect("localhost", "root", "2000", "G22") or die(mysqli_connect_error());
+    $mysql = mysqli_connect($server, $user, $pass, $basededatos) or die(mysqli_connect_error());
     $user= $_POST['email'];
     $pass = $_POST['pass'];
-    $usuarios = mysqli_query($mysql, "select * from Users where user_email ='$user'
-and user_password ='$pass'");
+    $usuarios = mysqli_query($mysql, "select * from Users where user_email ='$user'and user_password ='$pass'");
     $cont = mysqli_num_rows($usuarios); //Se verifica el total de filas devueltas
     mysqli_close($mysql); //cierra la conexion
     if ($cont == 1) {
@@ -15,3 +17,5 @@ and user_password ='$pass'");
     href='../../php/Login.php'>Puede intentarlo de nuevo</a>");
     }
 }
+?>
+
