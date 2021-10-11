@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--<?php include '../html/Head.html'?>-->
+  <?php include '../html/Head.html'?>
 </head>
 <body>
-  <!--<?php include '../php/Menus.php' ?> -->
+  <?php include '../php/Menus.php';
+  ?>
   <section class="main" id="s1">
     <form action=funciones/ComprobarLogin.php method="POST">
       <h2>Identificación de usuario </h2>

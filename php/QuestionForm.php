@@ -10,7 +10,11 @@
 </head>
 <body>
   <?php include '../php/Menus.php' ?>
+  
   <section class="main" id="s1">
+  <?php 
+  include '../php/ComprobarSingup.php';
+  ?>
     <div>
     <form action="AddQuestion.php" onsubmit= "return comprobarCamposVacios()" method="POST" >
     <div><label for="correo">Introduce un correo de UPV/EHU: </label>
