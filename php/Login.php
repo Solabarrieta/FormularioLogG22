@@ -4,7 +4,13 @@
   <?php include '../html/Head.html'?>
 </head>
 <body>
-  <?php include '../php/Menus.php';
+  
+  <?php 
+  if(!isset($_GET['user'])){
+    include '../php/MenusReduce.php';
+  }else{
+    include '../php/Menus.php';
+  }
   ?>
   <section class="main" id="s1">
     <form action=funciones/ComprobarLogin.php method="POST">

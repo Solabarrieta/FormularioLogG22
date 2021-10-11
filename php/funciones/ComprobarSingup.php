@@ -15,7 +15,4 @@ echo "'$username'";
 $Singup = mysqli_query($mysql, "INSERT INTO Users (user_email,user_password) VALUE ('$username','$pass')");
 mysqli_close($mysql); //cierra la conexion
 
-
-
-
 header("Location: ../Layout.php?username=$username");

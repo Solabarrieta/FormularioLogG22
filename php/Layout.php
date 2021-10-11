@@ -7,15 +7,11 @@
 
 <body>
   <?php
-  include '../php/session.php';
-  if (!isset($user)) {
-    echo "$use";
+  if (!isset($_GET['user'])) {
     include '../php/MenusReduce.php';
   } else {
-    //postData($_GET['user']);
-    echo "$user";
+  
     include '../php/Menus.php';
-
   }
   ?>
 
