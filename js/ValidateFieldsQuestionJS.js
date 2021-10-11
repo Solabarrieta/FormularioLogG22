@@ -57,8 +57,9 @@ function testEmail(){
     let regIrakasle = /^([a-z]+\.[a-z]+[@]ehu\.(eus|es)|[a-z]+[@]ehu\.(eus|es))$/;
 
     let email = document.getElementById("email").value;
+    alert(email)
     
-    if(regIkasle.test(email)||regIrakasle.test(email)){
+    if(email.match(regIkasle)||email.match(regIrakasle){
         return true;
     }else{
         let result = document.getElementById("textEmail");
