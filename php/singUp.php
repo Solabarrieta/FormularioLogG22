@@ -23,6 +23,11 @@
                     <input type="password" name="confirm_password" required id="confirm_password" />
                     <span id='message'></span>
                 </label>
+                <br>
+                <input type="radio" name="type" id="student" value="alumno">
+                <label for="student">Alumno</label>
+                <input type="radio" name="type" id="teacher" value="profesor" >
+                <label for="teacher">Profesor</label>
             <p> <input id="input_2" type="submit" />
         </form>
     </section>
