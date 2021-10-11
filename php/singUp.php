@@ -10,7 +10,13 @@
 </head>
 
 <body>
-    <?php include '../php/Menus.php' ?>
+    <?php
+    if (!isset($_GET['user'])) {
+        include '../php/MenusReduce.php';
+    }else{
+        include '../php/Menus.php';
+    }
+    ?>
     <section class="main" id="s1">
         <form action=funciones/ComprobarSingup.php method="POST">
             <h2>Identificación de usuario </h2>
@@ -26,7 +32,7 @@
                 <br>
                 <input type="radio" name="type" id="student" value="alumno">
                 <label for="student">Alumno</label>
-                <input type="radio" name="type" id="teacher" value="profesor" >
+                <input type="radio" name="type" id="teacher" value="profesor">
                 <label for="teacher">Profesor</label>
             <p> <input id="input_2" type="submit" />
         </form>
