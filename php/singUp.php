@@ -18,9 +18,9 @@
     }
     ?>
     <section class="main" id="s1">
-        <form action=funciones/ComprobarSingup.php method="POST">
+        <form action=funciones/ComprobarSingup.php method="POST" onsubmit=../js/ValidateFieldsQuestionJS.js>
             <h2>Identificación de usuario </h2>
-            <p> Email : <input type="email" required name="email" size="21" /><br>
+            <p> Email : <input type="text" required name="email" size="21" /><br>
                 <label>password :
                     <input name="password" required id="password" type="password" />
                 </label>

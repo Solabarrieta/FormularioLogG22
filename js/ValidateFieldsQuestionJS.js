@@ -53,8 +53,8 @@ function comprobarCamposVacios(){
 
 
 function testEmail(){
-    let regIkasle =/[a-z][a-z]+[0-9]{3}[@]ikasle\.ehu\.(eus|es)/ ;
-    let regIrakasle = /([a-z]+\.[a-z]+[@]ehu\.(eus|es)|[a-z]+[@]ehu\.(eus|es))/;
+    let regIkasle =/^[a-z][a-z]+[0-9]{3}[@]ikasle\.ehu\.(eus|es)$/ ;
+    let regIrakasle = /^([a-z]+\.[a-z]+[@]ehu\.(eus|es)|[a-z]+[@]ehu\.(eus|es))$/;
 
     let email = document.getElementById("email").value;
     
