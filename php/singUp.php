@@ -13,7 +13,7 @@
     <?php
     if (!isset($_GET['user'])) {
         include '../php/MenusReduce.php';
-    }else{
+    } else {
         include '../php/Menus.php';
     }
     ?>
