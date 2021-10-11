@@ -17,9 +17,13 @@ if ($cont > 0) {
     echo "ya existe este usuario en la base de datos.";
     exit();
 }
-$Singup = mysqli_query($mysql, "INSERT INTO Users (user_email,user_password,tipo) VALUE ('$username','$pasw','$tipo')");
-
+$sql = "INSERT INTO Users (user_email,user_password,tipo) VALUES ('$username','$pasw','$tipo')";
+if ($mysql->query($sql) === TRUE) {
+    header("Location: ../Layout.php?username=$username");
+    echo "New record created successfully";
+  } else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+  }
 
 mysqli_close($mysql); //cierra la conexion
 
-header("Location: ../Layout.php?username=$username");
