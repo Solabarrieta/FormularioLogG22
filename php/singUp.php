@@ -3,9 +3,6 @@
 
 <head>
     <?php include '../html/Head.html' ?>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-
-    <script src="../js/ConfirmPasswordJQ.js"></script>
 
 </head>
 
@@ -18,7 +15,7 @@
     }
     ?>
     <section class="main" id="s1">
-        <form action=funciones/ComprobarSingup.php method="POST" onsubmit=../js/ValidateFieldsQuestionJS.js>
+        <form action=funciones/ComprobarSingup.php method="POST">
             <h2>Identificación de usuario </h2>
             <p> Email : <input type="text" required name="email" size="21" /><br>
                 <label>password :
