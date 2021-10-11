@@ -1,6 +1,8 @@
+<?php include '../DbConfig.php' ?>
+
 <?php
 if (!isset($_POST['email']))die('WORNG AUTHENTICATION');
-$mysql = mysqli_connect("localhost", "root", "2000", "G22") or die(mysqli_connect_error());
+$mysql = mysqli_connect($server, $user, $pass, $basededatos) or die(mysqli_connect_error());
 $username = $_POST['email'];
 $pass = $_POST['password'];
 $pass2 = $_POST['confirm_password'];
@@ -14,8 +16,6 @@ if ($cont > 0) {
 echo "'$username'";
 $Singup = mysqli_query($mysql, "INSERT INTO Users (user_email,user_password) VALUE ('$username','$pass')");
 mysqli_close($mysql); //cierra la conexion
-
-
 
 
 header("Location: ../Layout.php?username=$username");
