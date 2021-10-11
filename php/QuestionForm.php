@@ -14,11 +14,12 @@
   <section class="main" id="s1">
   <?php 
   include '../php/ComprobarSingup.php';
+  $user = $_GET['user'];
   ?>
     <div>
     <form action="AddQuestion.php" onsubmit= "return comprobarCamposVacios()" method="POST" >
     <div><label for="correo">Introduce un correo de UPV/EHU: </label>
-      <input type ="text" id="email" name="correo">  
+      <input type ="text" id="email" name="correo" value='<?php echo"$user"?>'>  
       <p id="textEmail"></p>
       </div>
       
