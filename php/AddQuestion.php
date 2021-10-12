@@ -17,12 +17,15 @@
           printf("Error de conexión: %s\n", mysqli_connect_error());
           exit();
         }
+          
 
 
+        $stmt = $conn->prepare("INSERT INTO preguntas (email, enunciado,respuestaCorrecta, respuestaIncorrecta1, respuestaIncorrecta2, respuestaIncorrecta3, complejidad, tema) VALUES ('" . $_GET['correo'] . "','" . $_GET['enunciado'] . "','" . $_GET["correcta"] . "','" . $_GET["incorrecta"] . "','" . $_GET["incorrecta1"] . "','" . $_GET["incorrecta2"] . "','" . $_GET["complejidad"] . "','" . $_GET["tema"] . "')");
+        
+        $user = $_GET['correo'];
+        $actual_link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
-        $stmt = $conn->prepare("INSERT INTO preguntas (email, enunciado,respuestaCorrecta, respuestaIncorrecta1, respuestaIncorrecta2, respuestaIncorrecta3, complejidad, tema) VALUES ('" . $_POST['correo'] . "','" . $_POST['enunciado'] . "','" . $_POST["correcta"] . "','" . $_POST["incorrecta"] . "','" . $_POST["incorrecta1"] . "','" . $_POST["incorrecta2"] . "','" . $_POST["complejidad"] . "','" . $_POST["tema"] . "')");
-        $user = $_POST['correo'];
-        if(!isset($_GET['user'])) header("Location: ../php/AddQuestion.php?user=$user");
+        if(!isset($_GET['user'])) header("Location: $actual_link&user=$user");
         $user=$_GET['user'];
 
         if ($stmt) {
