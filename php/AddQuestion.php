@@ -12,7 +12,7 @@
     <div>
       <form>
         <?php
-        $conn = new mysqli($server, $user, $pass, $basededatos);
+        $conn = new mysqli($server, $db_user, $pass, $basededatos);
         if (mysqli_connect_errno()) {
           printf("Error de conexión: %s\n", mysqli_connect_error());
           exit();
@@ -20,14 +20,16 @@
 
 
 
-        //echo "esto es el correo : '" . $_POST['correo'] . "'";
         $stmt = $conn->prepare("INSERT INTO preguntas (email, enunciado,respuestaCorrecta, respuestaIncorrecta1, respuestaIncorrecta2, respuestaIncorrecta3, complejidad, tema) VALUES ('" . $_POST['correo'] . "','" . $_POST['enunciado'] . "','" . $_POST["correcta"] . "','" . $_POST["incorrecta"] . "','" . $_POST["incorrecta1"] . "','" . $_POST["incorrecta2"] . "','" . $_POST["complejidad"] . "','" . $_POST["tema"] . "')");
+        $user = $_POST['correo'];
+        if(!isset($_GET['user'])) header("Location: ../php/AddQuestion.php?user=$user");
+        $user=$_GET['user'];
 
         if ($stmt) {
           if ($stmt->execute()) {
             echo "se ha enviado la pregunta correctamente";
             $stmt->close();
-            echo "<p><a href='./ShowQuestions.php'>Ver preguntas</a></p>";
+            echo "<p><a href='./ShowQuestions.php?user=$user'>Ver preguntas</a></p>";
           }
         } else {
           echo 'no se ha podido enviar la pregunta a la base de datos';

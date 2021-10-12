@@ -11,14 +11,14 @@
     <?php
 
 //Para crear la conexión con la base de datos.
-$conn = mysqli_connect($server, $user, $pass, $basededatos);
+$conn = mysqli_connect($server, $db_user, $pass, $basededatos);
 //Es necesario comprobar si se ha conectado, sino hay que matar la conexión... 
 
 if(!$conn){
   die("Connection failed: ".mysqli_connect_error());
 }
-
-$sql="SELECT * FROM preguntas";
+$user=$_GET['user'];
+$sql="SELECT * FROM preguntas WHERE email='$user'";
 $result =mysqli_query($conn, $sql);
 
 echo
@@ -52,7 +52,7 @@ if(mysqli_num_rows($result)>0){
         </tr>
         </tbody>";
 
-        echo "<\table>";
+        
 
 
   }
