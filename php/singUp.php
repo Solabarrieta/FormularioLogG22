@@ -6,9 +6,7 @@
     if (!isset($_POST['email'])) {
     } else {
         include 'DbConfig.php';
-        echo "hola";
         $mysql = mysqli_connect($server, $db_user, $pass, $basededatos) or die(mysqli_connect_error());
-        echo "hola";
 
         $username = $_POST['email'];
         $pasw = $_POST['password'];
