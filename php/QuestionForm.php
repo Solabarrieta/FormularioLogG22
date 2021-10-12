@@ -26,7 +26,7 @@ if (isset($_POST['correo'])) {
             die('el campo tema esta vacio vuelva atras para completarlo');
           }else{
             //echo "pregunta enviada correctamente";
-            header("Location: AddQuestion.php?correo=$correo&enunciado=$enunciado&correcta=$correcta&incorrecta=$incorrecta&incorrecta1=$incorrecta1&incorrecta2=$incorrecta2&complejidad=$complejidad&tema=$tema");
+            header("Location: AddQuestion.php?user=$correo&enunciado=$enunciado&correcta=$correcta&incorrecta=$incorrecta&incorrecta1=$incorrecta1&incorrecta2=$incorrecta2&complejidad=$complejidad&tema=$tema");
           }
         }
       }

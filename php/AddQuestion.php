@@ -20,13 +20,12 @@
           
 
 
-        $stmt = $conn->prepare("INSERT INTO preguntas (email, enunciado,respuestaCorrecta, respuestaIncorrecta1, respuestaIncorrecta2, respuestaIncorrecta3, complejidad, tema) VALUES ('" . $_GET['correo'] . "','" . $_GET['enunciado'] . "','" . $_GET["correcta"] . "','" . $_GET["incorrecta"] . "','" . $_GET["incorrecta1"] . "','" . $_GET["incorrecta2"] . "','" . $_GET["complejidad"] . "','" . $_GET["tema"] . "')");
-        
-        $user = $_GET['correo'];
+        $stmt = $conn->prepare("INSERT INTO preguntas (email, enunciado,respuestaCorrecta, respuestaIncorrecta1, respuestaIncorrecta2, respuestaIncorrecta3, complejidad, tema) VALUES ('" . $_GET['user'] . "','" . $_GET['enunciado'] . "','" . $_GET["correcta"] . "','" . $_GET["incorrecta"] . "','" . $_GET["incorrecta1"] . "','" . $_GET["incorrecta2"] . "','" . $_GET["complejidad"] . "','" . $_GET["tema"] . "')");
+
+        $user = $_GET['user'];
         $actual_link = 'http://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
-        if(!isset($_GET['user'])) header("Location: $actual_link&user=$user");
-        $user=$_GET['user'];
+        
 
         if ($stmt) {
           if ($stmt->execute()) {
