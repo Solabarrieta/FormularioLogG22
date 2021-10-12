@@ -1,7 +1,7 @@
 <?php
 include '../DbConfig.php';
 if (!isset($_POST['email'])) die('WORNG AUTHENTICATION');
-$mysql = mysqli_connect($server, $user, $pass, $basededatos) or die(mysqli_connect_error());
+$mysql = mysqli_connect($server, $db_user, $pass, $basededatos) or die(mysqli_connect_error());
 
 $username = $_POST['email'];
 $pasw = $_POST['password'];

@@ -1,4 +1,5 @@
 <?php
+include '../DbConfig.php';
 if (isset($_POST['email'])) {
     $mysql = mysqli_connect("localhost", "root", "2000", "G22") or die(mysqli_connect_error());
     $user= $_POST['email'];
