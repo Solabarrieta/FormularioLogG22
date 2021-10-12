@@ -1,3 +1,5 @@
+<?php include '../DbConfig.php' ?>
+
 <?php
 include '../DbConfig.php';
 if (!isset($_POST['email'])) die('WORNG AUTHENTICATION');
@@ -45,4 +47,8 @@ $Singup = mysqli_query($mysql, "INSERT INTO Users (user_email,user_password,tipo
 
 mysqli_close($mysql); //cierra la conexion
 
+<<<<<<< HEAD
 header("Location: ../Layout.php?user=$username");
+=======
+header("Location: ../Layout.php?user=$username");
+>>>>>>> 4fea4373d9eede57b22556c0bcce655f8439107c
