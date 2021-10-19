@@ -1,10 +1,10 @@
 <?php
-$local=1; //0 para la nube
+$local=0; //0 para la nube
 if ($local==0){
     $server="127.0.0.1";
-    $db_user="root";
-    $pass="2000";
-    $basededatos="G22";
+    $db_user="oier";
+    $pass="4258";
+    $basededatos="Quiz";
 }
 else{
     $server="localhost";
@@ -12,4 +12,3 @@ else{
     $pass="TWTnlYm33HtAL";
     $basededatos="db_G22";
 }
-?>
