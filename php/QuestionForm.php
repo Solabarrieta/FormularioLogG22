@@ -60,7 +60,7 @@ if (isset($_POST['correo'])) {
     ?>
     <div>
       <!--<form action="AddQuestion.php" onsubmit= "return comprobarCamposVacios()" method="POST" >-->
-      <form method="POST" action="AddQuestion.php">
+      <form method="POST">
         <div><label for="correo">Introduce un correo de UPV/EHU: </label>
           <input type="text" id="email" name="correo" value='<?php echo "$usuario" ?>'>
           <p id="textEmail"></p>
