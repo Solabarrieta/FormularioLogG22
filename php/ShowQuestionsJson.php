@@ -28,8 +28,6 @@
             $incorrectResponses = $question->incorrectResponses->value[0];
             $incorrectResponse1 = $question->incorrectResponses->value[1];
             $incorrectResponse2 = $question->incorrectResponses->value[2];
-
-
             echo '<tr>
         <td>' . $subject . '</td>
     <td>' . $author . '</td>
@@ -40,6 +38,7 @@
     <td>' . $incorrectResponse2 . '</td>
     </tr>';
         }
+        print_r(json_encode($array));
         echo '</table><center>';
         echo '</body>'; ?>
 

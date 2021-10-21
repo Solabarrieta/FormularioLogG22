@@ -48,32 +48,34 @@
           echo 'no se ha podido enviar la pregunta a la base de datos';
         }
 
+        $fichero = '../json/Questions.json';
 
-        $data = file_get_contents("../json/Questions.json") or die;
+        $data = file_get_contents($fichero, FILE_USE_INCLUDE_PATH) or die;
         $array = json_decode($data);
         $question = new stdClass();
         $question->subject = $tema;
         $question->author = $email;
         $question->itemBody = new stdClass();
-        $question->itemBody->p = $enunciado; //El codigo se rompe en este punto deja de funcionar. 
-
+        $question->itemBody->p = $enunciado;
         $question->correctResponse = new stdClass();
         $question->correctResponse->value = $correcta;
         $question->incorrectResponses = new stdClass();
         $question->incorrectResponses->value = array($incorrecta1, $incorrecta2, $incorrecta3);
 
+
         $preguntaarray[0] = $question;
-        array_push($array->assessmentItems, $preguntaarray);
+        array_push($array->assessmentItems, $preguntaarray[0]);
         $jsonData = json_encode($array);
+        print_r($jsonData);
+        echo '<br>';
+        echo '<br>';
+        echo '<br>';
         $jsonData = str_replace('{', '{' . PHP_EOL, $jsonData);
         $jsonData = str_replace(',', ',' . PHP_EOL, $jsonData);
         $jsonData = str_replace('}', PHP_EOL . '}', $jsonData);
+        print_r($jsonData);
 
-        if (file_put_contents("../json/Questions.json", $jsonData)) {
-          echo "Se ha introducido la pregunta al archivo JSON";
-        } else {
-          echo "No se ha podido introducir la pregunta al archivo JSON";
-        }
+        file_put_contents($fichero, $jsonData, FILE_APPEND) or die("Algo va mal");
 
         ?>
 
