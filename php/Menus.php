@@ -15,7 +15,8 @@ $variables = "?user=$user"
     <nav class='main' id='n1' role='navigation'>
       <span><a class="ancla" href='Layout.php<?php echo "$variables" ?>'>Inicio</a></span>
       <span><a class="ancla" href='QuestionForm.php<?php echo "$variables" ?>'> Insertar Pregunta</a></span>
-      <span><a class="ancla" href='ShowQuestions.php<?php echo "$variables" ?>'> Insertar Pregunta</a></span>
+      <span><a class="ancla" href='ShowQuestions.php<?php echo "$variables" ?>'> Ver preguntas</a></span>
+      <span><a class="ancla" href='ShowQuestionsJson.php<?php echo "$variables" ?>'> Ver preguntas JSON</a></span>
       <span><a class="ancla" href='Credits.php<?php echo "$variables" ?>'>Creditos</a></span>
     </nav>
   </form>
