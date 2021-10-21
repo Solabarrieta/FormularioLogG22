@@ -12,19 +12,19 @@ if (isset($_POST['correo'])) {
           die('el enunciado debe contener al menos 10 caracteres, vuelva hacia atras');
         }
       } else {
-        $correo=$_POST['correo'];
-        $correcta=$_POST['correcta'];
-        $incorrecta=$_POST['incorrecta'];
-        $incorrecta1=$_POST['incorrecta1'];
-        $incorrecta2=$_POST['incorrecta2'];
-        $tema=$_POST['tema'];
-        $complejidad=$_POST['complejidad'];
-        if(strlen($incorrecta)==0||strlen($incorrecta1)==0||strlen($incorrecta2)==0){
+        $correo = $_POST['correo'];
+        $correcta = $_POST['correcta'];
+        $incorrecta = $_POST['incorrecta'];
+        $incorrecta1 = $_POST['incorrecta1'];
+        $incorrecta2 = $_POST['incorrecta2'];
+        $tema = $_POST['tema'];
+        $complejidad = $_POST['complejidad'];
+        if (strlen($incorrecta) == 0 || strlen($incorrecta1) == 0 || strlen($incorrecta2) == 0) {
           die('Ha dejado alguna respuesta incorrecta sin responder, vuelva hacia atras');
-        }else{
-          if(strlen($tema)==0){
+        } else {
+          if (strlen($tema) == 0) {
             die('el campo tema esta vacio vuelva atras para completarlo');
-          }else{
+          } else {
             //echo "pregunta enviada correctamente";
             header("Location: AddQuestion.php?user=$correo&enunciado=$enunciado&correcta=$correcta&incorrecta=$incorrecta&incorrecta1=$incorrecta1&incorrecta2=$incorrecta2&complejidad=$complejidad&tema=$tema");
           }
@@ -60,7 +60,7 @@ if (isset($_POST['correo'])) {
     ?>
     <div>
       <!--<form action="AddQuestion.php" onsubmit= "return comprobarCamposVacios()" method="POST" >-->
-      <form method="POST">
+      <form method="POST" action="AddQuestion.php">
         <div><label for="correo">Introduce un correo de UPV/EHU: </label>
           <input type="text" id="email" name="correo" value='<?php echo "$usuario" ?>'>
           <p id="textEmail"></p>

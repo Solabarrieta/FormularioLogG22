@@ -1,2 +1,3 @@
 *.json
 .vscode/
+php/DbConfig.php
