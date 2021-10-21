@@ -18,9 +18,19 @@
           exit();
         }
 
+        $email = $_GET['user'];
+        $enunciado = $_GET['enunciado'];
+        $correcta = $_GET["correcta"];
+        $incorrecta1 = $_GET["incorrecta"];
+        $incorrecta2 = $_GET["incorrecta1"];
+        $incorrecta3 = $_GET["incorrecta2"];
+        $complejidad = $_GET["complejidad"];
+        $tema = $_GET["tema"];
 
 
-        $stmt = $conn->prepare("INSERT INTO preguntas (email, enunciado,respuestaCorrecta, respuestaIncorrecta1, respuestaIncorrecta2, respuestaIncorrecta3, complejidad, tema) VALUES ('" . $_GET['user'] . "','" . $_GET['enunciado'] . "','" . $_GET["correcta"] . "','" . $_GET["incorrecta"] . "','" . $_GET["incorrecta1"] . "','" . $_GET["incorrecta2"] . "','" . $_GET["complejidad"] . "','" . $_GET["tema"] . "')") or die("Error: " . mysqli_connect_errno());
+        $stmt = $conn->prepare("INSERT INTO preguntas (email, enunciado,respuestaCorrecta, respuestaIncorrecta1, respuestaIncorrecta2, respuestaIncorrecta3, complejidad, tema) VALUES ('" . $email . "','" . $enunciado . "','" . $correcta . "','" . $incorrecta1 . "','" . $incorrecta2 . "','" . $incorrecta3 . "','" . $complejidad . "','" . $tema . "')") or die("Error: " . mysqli_connect_errno());
+
+
 
 
         $user = $_GET['user'];
@@ -37,6 +47,34 @@
         } else {
           echo 'no se ha podido enviar la pregunta a la base de datos';
         }
+
+
+        $data = file_get_contents("../json/Questions.json") or die;
+        $array = json_decode($data);
+        $question = new stdClass();
+        $question->subject = $tema;
+        $question->author = $email;
+        $question->itemBody = new stdClass();
+        $question->itemBody->p = $enunciado; //El codigo se rompe en este punto deja de funcionar. 
+
+        $question->correctResponse = new stdClass();
+        $question->correctResponse->value = $correcta;
+        $question->incorrectResponses = new stdClass();
+        $question->incorrectResponses->value = array($incorrecta1, $incorrecta2, $incorrecta3);
+
+        $preguntaarray[0] = $question;
+        array_push($array->assessmentItems, $preguntaarray);
+        $jsonData = json_encode($array);
+        $jsonData = str_replace('{', '{' . PHP_EOL, $jsonData);
+        $jsonData = str_replace(',', ',' . PHP_EOL, $jsonData);
+        $jsonData = str_replace('}', PHP_EOL . '}', $jsonData);
+
+        if (file_put_contents("../json/Questions.json", $jsonData)) {
+          echo "Se ha introducido la pregunta al archivo JSON";
+        } else {
+          echo "No se ha podido introducir la pregunta al archivo JSON";
+        }
+
         ?>
 
       </form>
