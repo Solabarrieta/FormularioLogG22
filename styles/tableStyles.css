@@ -6,6 +6,8 @@
 
 section {
     padding: 10px 0px;
+    max-height: 500px;
+    overflow: scroll;
 }
 
 section h3{
@@ -18,6 +20,8 @@ section table {
     border: 1px solid grey;
     border-radius: 4px;
     text-align: center;
+    max-height: 400px;
+    min-height: 200px;
 }
 
 section table th{
