@@ -21,11 +21,8 @@
     <tr>
         <td>email</td>
         <td>enunciado</td> 
-        <td>correcta</td> 
-        <td>Incorrecta</td>
-        <td>Incorrecta</td>
-        <td>Incorrecta</td> 
-        <td>Subject<td>
+        <td>Respuesta correcta</td> 
+    
     </tr>
     ";
         $user = $_GET['user'];
@@ -35,11 +32,7 @@
     <tr>
         <td>" . $value->attributes()['author'] . "</td>
         <td>" . $value->itemBody->p . "</td>
-        <td>" . $value->correctResponse->response . "</td>
-        <td>" . $value->incorrectResponses->response[0] . "</td>
-        <td>" . $value->incorrectResponses->response[1] . "</td>        
-        <td>" . $value->incorrectResponses->response[2] . "</td>       
-        <td>" . $value->attributes()['subject'] . "</td>
+        <td>" . $value->correctResponse->response . "</td>    
 
     </tr>
     ";
