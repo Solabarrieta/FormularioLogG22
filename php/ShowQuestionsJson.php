@@ -38,7 +38,6 @@
     <td>' . $incorrectResponse2 . '</td>
     </tr>';
         }
-        print_r(json_encode($array));
         echo '</table><center>';
         echo '</body>'; ?>
 

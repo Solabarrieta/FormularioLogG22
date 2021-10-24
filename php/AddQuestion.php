@@ -71,7 +71,11 @@
         $jsonData = str_replace('}', PHP_EOL . '}', $jsonData);
 
 
-        file_put_contents($fichero, $jsonData, FILE_APPEND) or die("Algo va mal");
+        file_put_contents($fichero, $jsonData) or die("Algo va mal");
+
+        ?>
+
+        <?php
 
         ?>
 
