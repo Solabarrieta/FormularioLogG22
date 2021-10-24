@@ -92,7 +92,8 @@
         $Incorrect->addChild('response',$incorrecta3);
 
 
-        $xml->asXML("../xml/Questions.xml");
+        $xml->asXML("../xml/Questions.xml") or die('No ha sido posible guardar la pregunta');
+        echo "Se ha añadido la pregunta XML";
 
         ?>
 
