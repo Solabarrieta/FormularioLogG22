@@ -16,7 +16,6 @@
 
         <?php
         $user = $_GET['user'];
-        echo $user;
         $data = file_get_contents("../json/Questions.json");
         $array = json_decode($data);
         echo '<h3><center>CONTENIDO DEL FICHERO JSON </h3><p><p>';
