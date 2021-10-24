@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <assessmentItems>
 	<assessmentItem subject="Web" author="jvadillo001@ikasle.ehu.eus">
 		<itemBody>
-			<p>Tag HTML para a&#xF1;adir un formulario</p>
+			<p>Tag HTML para añadir un formulario</p>
 		</itemBody>
 		<correctResponse>
 			<response>
@@ -15,10 +15,10 @@
 			<response> DIV </response>
 		</incorrectResponses>
 	</assessmentItem>
-		<assessmentItem subject="Internet" author="rarruabarrena001@ikasle.ehu.eus">
+	<assessmentItem subject="Internet" author="rarruabarrena001@ikasle.ehu.eus">
 		<itemBody>
-			<p>Este protocolo acabar&#xE1; funcionando
-			incluso entre dos latas unidas por un cord&#xF3;n</p>
+			<p>Este protocolo acabará funcionando
+			incluso entre dos latas unidas por un cordón</p>
 		</itemBody>
 		<correctResponse>
 			<response>
@@ -31,4 +31,15 @@
 			<response> Ninguna es correcta </response>
 		</incorrectResponses>
 	</assessmentItem>
-</assessmentItems>
+	<assessmentItem subject="jl" author="fguzman002@ikasle.ehu.eus"/>
+	<assessmentItem subject="kj" author="fguzman002@ikasle.ehu.eus"/>
+	<assessmentItem>
+		<itemBody>
+			<p subject="hjkh" author="fguzman002@ikasle.ehu.eus">kfjsdklfjsdal;kj</p>
+		</itemBody>
+	</assessmentItem>
+	<assessmentItem subject="j" author="fguzman002@ikasle.ehu.eus"/>
+		<itemBody>
+			<p>gfkld;jfdlksafj</p>
+		</itemBody>
+<assessmentItem subject="lkj" author="fguzman002@ikasle.ehu.eus"><itemBody><p>jglkfdjgflkdjsklj</p></itemBody></assessmentItem><assessmentItem subject="php" author="fguzman002@ikasle.ehu.eus"><itemBody><p>pregunta de pureba</p></itemBody><correctResponse><response>correcta</response></correctResponse><incorrectResponses><response/><response>incorrecta1</response><response>incorrecta2</response></incorrectResponses></assessmentItem><assessmentItem subject="fsdlk" author="fguzman002@ikasle.ehu.eus"><itemBody><p>preubafkldsjalfdsjl</p></itemBody><correctResponse><response>4</response></correctResponse><incorrectResponses><response>1</response><response>2</response><response>2</response></incorrectResponses></assessmentItem><assessmentItem subject="fsdlk" author="fguzman002@ikasle.ehu.eus"><itemBody><p>preubafkldsjalfdsjl</p></itemBody><correctResponse><response>4</response></correctResponse><incorrectResponses><response>1</response><response>2</response><response>3</response></incorrectResponses></assessmentItem></assessmentItems>

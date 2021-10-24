@@ -66,21 +66,34 @@
         $preguntaarray[0] = $question;
         array_push($array->assessmentItems, $preguntaarray[0]);
         $jsonData = json_encode($array);
-        
+
         echo '<br>';
         echo '<br>';
         echo '<br>';
         $jsonData = str_replace('{', '{' . PHP_EOL, $jsonData);
         $jsonData = str_replace(',', ',' . PHP_EOL, $jsonData);
         $jsonData = str_replace('}', PHP_EOL . '}', $jsonData);
-        
+
 
         file_put_contents($fichero, $jsonData) or die("Algo va mal");
 
         ?>
 
         <?php
-          
+        $xml = simplexml_load_file("../xml/Questions.xml") or die('no ha sido posible cargar el fichero XML');
+        $Question= $xml->addChild('assessmentItem','');
+        $Question->addAttribute('subject',$tema);
+        $Question->addAttribute('author',$email);
+        $Question->addChild('itemBody','')->addChild('p',$enunciado);
+        $Question->addChild('correctResponse','')->addChild('response',$correcta);
+        $Incorrect=$Question->addChild('incorrectResponses','');
+        $Incorrect->addChild('response',$incorrecta1);
+        $Incorrect->addChild('response',$incorrecta2);
+        $Incorrect->addChild('response',$incorrecta3);
+
+
+        $xml->asXML("../xml/Questions.xml");
+
         ?>
 
       </form>
