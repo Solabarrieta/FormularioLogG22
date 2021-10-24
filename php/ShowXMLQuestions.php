@@ -16,7 +16,7 @@
         <?php
         $xml = simplexml_load_file("../xml/Questions.xml") or die('no ha sido posible cargar el fichero XML');
 
-        echo "<table border ='1' widht='5000'>\n";
+        echo "<center><table>\n";
         echo "
     <tr>
         <td>email</td>
