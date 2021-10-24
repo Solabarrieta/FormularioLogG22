@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+    <style>
+        <?php include "../styles/tableStyles.css" ?>
+    </style>
     <?php include '../html/Head.html' ?>
 </head>
 
@@ -25,7 +28,7 @@
         <td>Subject<td>
     </tr>
     ";
-    $user = $_GET['user'];
+        $user = $_GET['user'];
         foreach ($xml->assessmentItem as $key => $value) {
             if ($value->attributes()['author'] == $user) {
                 echo "
