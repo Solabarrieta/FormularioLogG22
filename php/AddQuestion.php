@@ -66,14 +66,10 @@
         $preguntaarray[0] = $question;
         array_push($array->assessmentItems, $preguntaarray[0]);
         $jsonData = json_encode($array);
-        print_r($jsonData);
-        echo '<br>';
-        echo '<br>';
-        echo '<br>';
         $jsonData = str_replace('{', '{' . PHP_EOL, $jsonData);
         $jsonData = str_replace(',', ',' . PHP_EOL, $jsonData);
         $jsonData = str_replace('}', PHP_EOL . '}', $jsonData);
-        print_r($jsonData);
+
 
         file_put_contents($fichero, $jsonData, FILE_APPEND) or die("Algo va mal");
 
