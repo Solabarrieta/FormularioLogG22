@@ -1,3 +1,4 @@
 *.json
 .vscode/
 php/DbConfig.php
+*.xml
